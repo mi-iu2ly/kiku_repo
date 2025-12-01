@@ -2,25 +2,113 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>生産レポート</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生産レポート一覧</title>
     <style>
-        body { font-family: sans-serif; padding: 2em; }
-        a { display: block; margin-bottom: 1em; }
+        /* 基本スタイル */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ヘッダー */
+        .header {
+            background-color: #005A9C; /* 濃い青 */
+            color: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* レポートカードのグリッド */
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* 各月のレポートカード */
+        .report-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .report-card:hover {
+            transform: translateY(-5px); /* 少し浮き上がる効果 */
+        }
+        .report-card h2 {
+            margin-top: 0;
+            font-size: 1.8em;
+            color: #005A9C;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* レポートへのリンク */
+        .report-card a {
+            display: block;
+            background-color: #EBF4FF; /* 薄い青 */
+            color: #005A9C;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .report-card a:hover {
+            background-color: #D6E8FF; /* 少し濃い青 */
+        }
+        .report-card a::before {
+            content: '📄 '; /* 絵文字でアイコンを追加 */
+        }
     </style>
 </head>
 <body>
-    <h1>生産レポート</h1>
-    
-    <!-- VBAで出力したPDFへのリンク -->
-    <p>2025年10月</p>
-    <a href="月報_202510.pdf" target="_blank">月報 (2025年10月)</a>
-    <a href="月次生産実績_202510.html" target="_blank">月次生産実績 (2025年10月)</a>
-    <p>2025年11月</p>
-    <a href="月報_202511.pdf" target="_blank">月報 (2025年11月)</a>
-    <a href="月次生産実績_202511.html" target="_blank">月次生産実績 (2025年11月)</a>
 
-    
-    <!-- 今後、他の月のPDFを追加していく場合は、この下に追記します -->
+    <div class="container">
+
+        <header class="header">
+            <h1>ナンカイ工業 生産レポート</h1>
+        </header>
+
+        <main class="report-grid">
+            
+            <!-- 2025年11月 -->
+            <div class="report-card">
+                <h2>2025年11月</h2>
+                <a href="月報_202511.pdf" target="_blank">月報</a>
+                <a href="月次生産実績_202511.html" target="_blank">月次生産実績</a>
+            </div>
+            
+            <!-- 2025年10月 -->
+            <div class="report-card">
+                <h2>2025年10月</h2>
+                <a href="月報_202510.pdf" target="_blank">月報</a>
+                <a href="月次生産実績_202510.html" target="_blank">月次生産実績</a>
+            </div>
+            
+            <!-- 新しい月を追加する場合は、この上にコピー＆ペーストで追加していく -->
+
+        </main>
+    </div>
 
 </body>
 </html>
