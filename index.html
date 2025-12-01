@@ -1,32 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>気まぐれボタン</title>
-  <style>
-    body { text-align: center; font-family: "Segoe UI", sans-serif; margin-top: 50px; transition: background 0.5s; }
-    button { font-size: 1.5rem; padding: 15px 30px; border: none; border-radius: 10px; background: #ffcc00; cursor: pointer; }
-    p { font-size: 1.2rem; margin-top: 30px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>生産レポート</title>
+    <style>
+        body { font-family: sans-serif; padding: 2em; }
+        a { display: block; margin-bottom: 1em; }
+    </style>
 </head>
 <body>
-  <h1>気まぐれボタン</h1>
-  <button onclick="play()">押してみる？</button>
-  <p id="msg">今日はどんな気分？</p>
+    <h1>生産レポート</h1>
+    <p>masterシートで指定した月のレポートです。</p>
+    
+    <!-- VBAで出力したPDFへのリンク -->
+    <a href="月報_202510.pdf" target="_blank">月報 (2025年10月)</a>
+    <a href="月次生産実績_202510.pdf" target="_blank">月次生産実績 (2025年10月)</a>
 
-  <script>
-    const messages = [
-      "🐾",
-      "押しすぎ注意！💥",
-      "まだ押すの？😳",
-      "なんか楽しくなってきた！🎉",
-      "ボタンも疲れてきたかも…😴",
-      "押した回数が世界を変える！？🌍",
-    ];
-    function play() {
-      document.body.style.background = `hsl(${Math.random() * 360}, 70%, 80%)`;
-      document.getElementById("msg").innerText =
-        messages[Math.floor(Math.random() * messages.length)];
-    }
-  </script>
+    <!-- 今後、他の月のPDFを追加していく場合は、この下に追記します -->
+
 </body>
 </html>
