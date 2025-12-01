@@ -11,7 +11,7 @@
             background-color: #f4f7f6;
             color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
         }
 
         /* コンテナ */
@@ -31,7 +31,7 @@
         }
         .header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.5em;/* PC用のデフォルトサイズ*/
         }
 
         /* レポートカードのグリッド */
@@ -79,6 +79,15 @@
         .report-card a::before {
             content: '📄 '; /* 絵文字でアイコンを追加 */
         }
+
+        /*スマホ表示用のメディアクエリ*/
+        @media (max-width:600px){
+            body{padding:10px;}
+            .header{padding:15px;}
+            .header h1{font-size:1.8em;}
+            .report-card h2{font-size:1.5em;}
+        }
+        
     </style>
 </head>
 <body>
